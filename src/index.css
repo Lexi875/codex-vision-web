@@ -180,6 +180,18 @@
   50% { border-color: transparent }
 }
 
+/* New animation for smoother scroll reveals */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -212,6 +224,10 @@
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
 /* Typewriter effect */
 .typewriter {
   overflow: hidden;
@@ -236,6 +252,15 @@
   background: rgba(139, 92, 246, 0.4);
   border-radius: 50%;
   animation: float 8s ease-in-out infinite;
+}
+
+.particle-small {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite;
 }
 
 .particle:nth-child(2) {
@@ -286,13 +311,13 @@
   box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
 }
 
-/* Terminal window styling */
+/* Terminal window styling with enhanced glow */
 .terminal-window {
   background: rgba(9, 9, 11, 0.95);
   border: 1px solid rgba(139, 92, 246, 0.3);
   border-radius: 12px;
   backdrop-filter: blur(20px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(139, 92, 246, 0.1);
 }
 
 .terminal-header {
@@ -344,4 +369,26 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Enhanced hover effects for interactive elements */
+.interactive-glow:hover {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+  transform: scale(1.05);
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background: linear-gradient(-45deg, #8b5cf6, #3b82f6, #06b6d4, #10b981);
+  background-size: 400% 400%;
+  animation: gradient-shift 4s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
