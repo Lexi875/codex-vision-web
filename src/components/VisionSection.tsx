@@ -1,14 +1,15 @@
 
 import React, { useEffect, useRef, useState } from 'react';
+import { Target, Lightbulb, Heart, Sparkles } from 'lucide-react';
 
 const VisionSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   const goals = [
-    "Build a tech company",
-    "Help others with AI",
-    "Invent useful tools for the real world"
+    { text: "Build a tech company", icon: Target },
+    { text: "Help others with AI", icon: Heart },
+    { text: "Invent useful tools for the real world", icon: Lightbulb }
   ];
 
   useEffect(() => {
@@ -32,51 +33,59 @@ const VisionSection = () => {
     <section 
       id="vision" 
       ref={sectionRef}
-      className="min-h-screen py-20 px-4 bg-gradient-to-b from-slate-900 via-gray-900 to-slate-800 relative z-10"
+      className="min-h-screen py-20 px-4 relative z-10"
     >
       <div className="max-w-6xl mx-auto">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            My <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">Vision</span>
+          <h2 className="text-5xl md:text-7xl font-bold text-center mb-20 animate-jump-in">
+            My <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">Vision</span>
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="bg-gradient-to-br from-gray-800/80 to-slate-800/80 p-8 rounded-xl border border-gray-700/50 backdrop-blur-sm glow-blue">
-                <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                  My goal is to build <span className="text-blue-400 font-semibold">CODEX OS</span> – a unified operating system for smart homes, phones, glasses, and robotics.
+              <div className="glass-card p-10 rounded-3xl border-purple-400/30 animate-flip-in" style={{ animationDelay: '0.2s' }}>
+                <Sparkles className="w-16 h-16 text-purple-400 mb-6 animate-float" />
+                
+                <p className="text-2xl text-zinc-300 leading-relaxed mb-6">
+                  My goal is to build <span className="text-violet-400 font-bold animate-pulse-glow">CODEX OS</span> – a unified operating system for smart homes, phones, glasses, and robotics.
                 </p>
                 
-                <p className="text-lg text-gray-400 leading-relaxed mb-6">
-                  <span className="text-teal-400 font-semibold">Max AI</span> will be the intelligent brain that connects it all.
+                <p className="text-xl text-zinc-400 leading-relaxed mb-6">
+                  <span className="text-purple-400 font-bold">Max AI</span> will be the intelligent brain that connects it all.
                 </p>
 
-                <p className="text-lg text-gray-400 leading-relaxed">
+                <p className="text-xl text-zinc-400 leading-relaxed">
                   I want to help people through tech – from smart cities to everyday tools.
                 </p>
               </div>
             </div>
 
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold mb-8 text-center">Goals</h3>
-              <div className="space-y-4">
-                {goals.map((goal, index) => (
-                  <div
-                    key={goal}
-                    className={`flex items-center space-x-4 p-4 bg-gradient-to-r from-gray-800/80 to-slate-700/80 rounded-lg border border-gray-700/50 hover:border-teal-400 hover:glow-teal transition-all duration-300 transform hover:scale-105 backdrop-blur-sm ${
-                      isVisible ? 'animate-fade-in' : ''
-                    }`}
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse-slow"></div>
-                    <span className="text-lg text-gray-300">{goal}</span>
-                  </div>
-                ))}
+            <div className="space-y-8">
+              <h3 className="text-3xl font-bold mb-12 text-center animate-fade-in-up">
+                My <span className="text-purple-400">Goals</span>
+              </h3>
+              <div className="space-y-6">
+                {goals.map((goal, index) => {
+                  const IconComponent = goal.icon;
+                  return (
+                    <div
+                      key={goal.text}
+                      className={`flex items-center space-x-6 glass-card p-6 rounded-xl border-purple-400/20 hover:border-purple-400/50 transition-all duration-300 transform hover:scale-105 animate-jump-in ${
+                        index % 2 === 0 ? 'animate-float' : 'animate-bounce-gentle'
+                      }`}
+                      style={{ animationDelay: `${index * 0.2}s` }}
+                    >
+                      <IconComponent className="w-8 h-8 text-purple-400 animate-float" />
+                      <span className="text-xl text-zinc-300 font-medium">{goal.text}</span>
+                    </div>
+                  );
+                })}
               </div>
 
-              <div className="mt-12 text-center">
-                <div className="inline-block bg-gradient-to-r from-teal-500 via-blue-600 to-green-500 p-6 rounded-xl glow-teal animate-gradient">
-                  <p className="text-white font-semibold text-lg">
+              <div className="mt-16 text-center">
+                <div className="glass-card bg-gradient-to-r from-purple-500/20 via-violet-600/20 to-purple-500/20 p-8 rounded-2xl border-purple-400/40 animate-backflip animate-pulse-glow" style={{ animationDelay: '0.8s' }}>
+                  <Sparkles className="w-12 h-12 mx-auto mb-4 text-purple-400 animate-bounce-gentle" />
+                  <p className="text-white font-bold text-2xl">
                     Ready to change the world, one line of code at a time.
                   </p>
                 </div>
