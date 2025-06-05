@@ -48,19 +48,19 @@ const ProjectsSection = () => {
     <section 
       id="projects" 
       ref={sectionRef}
-      className="min-h-screen py-20 px-4 bg-gradient-to-b from-gray-800 to-gray-900"
+      className="min-h-screen py-20 px-4 bg-gradient-to-b from-slate-800 via-gray-900 to-slate-900 relative z-10"
     >
       <div className="max-w-6xl mx-auto">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            My <span className="text-teal-400">Projects</span>
+            My <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">Projects</span>
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div
                 key={project.title}
-                className={`group bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-teal-400 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 cursor-pointer ${
+                className={`group bg-gradient-to-br from-gray-800/80 to-slate-800/80 rounded-xl p-6 border border-gray-700/50 hover:border-teal-400 transition-all duration-500 transform hover:scale-105 hover:glow-teal cursor-pointer backdrop-blur-sm ${
                   isVisible ? 'animate-fade-in' : ''
                 }`}
                 style={{ animationDelay: `${index * 200}ms` }}
@@ -75,12 +75,12 @@ const ProjectsSection = () => {
                   {project.description}
                 </p>
                 
-                <div className="text-sm text-gray-400">
+                <div className="text-sm text-gray-400 mb-6">
                   <span className="font-medium">Tech:</span> {project.tech}
                 </div>
 
-                <div className="mt-6 flex justify-end">
-                  <div className="w-8 h-8 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="flex justify-end">
+                  <div className="w-8 h-8 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform animate-pulse-slow">
                     <ArrowRight className="w-4 h-4 text-white" />
                   </div>
                 </div>
