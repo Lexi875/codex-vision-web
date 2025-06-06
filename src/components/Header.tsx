@@ -35,14 +35,14 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {['about', 'ai', 'software', 'robotics', 'projects', 'vision'].map((item) => (
+            {['about', 'skills', 'timeline', 'achievements', 'terminal', 'ai', 'software', 'robotics', 'projects', 'vision'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
                 className="text-zinc-300 hover:text-purple-400 transition-colors capitalize font-medium animate-float"
                 style={{ animationDelay: `${item.length * 0.1}s` }}
               >
-                {item}
+                {item === 'terminal' ? 'Live Code' : item}
               </button>
             ))}
           </div>
@@ -59,13 +59,13 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 glass-card p-4 rounded-xl animate-flip-in">
-            {['about', 'ai', 'software', 'robotics', 'projects', 'vision'].map((item) => (
+            {['about', 'skills', 'timeline', 'achievements', 'terminal', 'ai', 'software', 'robotics', 'projects', 'vision'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
                 className="block w-full text-left py-2 text-zinc-300 hover:text-purple-400 transition-colors capitalize"
               >
-                {item}
+                {item === 'terminal' ? 'Live Code' : item}
               </button>
             ))}
           </div>
