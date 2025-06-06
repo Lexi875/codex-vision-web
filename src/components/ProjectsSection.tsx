@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Bot, Brain, Smartphone, Cpu, Zap, Rocket } from 'lucide-react';
+import { Bot, Brain, Cpu } from 'lucide-react';
 
 const ProjectsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -68,25 +68,22 @@ const ProjectsSection = () => {
               return (
                 <div
                   key={project.title}
-                  className={`group glass-card rounded-2xl p-8 border-purple-400/20 hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 cursor-pointer animate-flip-in ${
+                  className={`group glass-card rounded-2xl p-8 border-purple-400/20 hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 animate-flip-in ${
                     index % 2 === 0 ? 'animate-float' : 'animate-bounce-gentle'
                   }`}
                   style={{ animationDelay: project.delay }}
                 >
                   <div className={`h-3 w-full bg-gradient-to-r ${project.gradient} rounded-full mb-6 animate-pulse-glow`}></div>
                   
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center justify-center mb-6">
                     <IconComponent className="w-12 h-12 text-purple-400 animate-float" />
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full flex items-center justify-center group-hover:scale-125 transition-transform animate-bounce-gentle">
-                      <ArrowRight className="w-6 h-6 text-white" />
-                    </div>
                   </div>
                   
-                  <h3 className="text-3xl font-bold mb-4 group-hover:text-purple-400 transition-colors">
+                  <h3 className="text-3xl font-bold mb-4 group-hover:text-purple-400 transition-colors text-center">
                     {project.title}
                   </h3>
                   
-                  <p className="text-zinc-300 mb-6 leading-relaxed text-lg">
+                  <p className="text-zinc-300 mb-6 leading-relaxed text-lg text-center">
                     {project.description}
                   </p>
                   

@@ -35,7 +35,7 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {['about', 'projects', 'vision'].map((item) => (
+            {['about', 'ai', 'software', 'robotics', 'projects', 'vision'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
@@ -59,7 +59,7 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 glass-card p-4 rounded-xl animate-flip-in">
-            {['about', 'projects', 'vision'].map((item) => (
+            {['about', 'ai', 'software', 'robotics', 'projects', 'vision'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
