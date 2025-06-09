@@ -22,27 +22,36 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'glass-card border-b border-purple-400/20' : 'bg-transparent'
     }`}>
-      <nav className="max-w-7xl mx-auto px-4 py-4">
+      <nav className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold animate-pulse-glow">
+          <div className="text-2xl font-bold">
             <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">
-              Alex
+              Tech Impact
             </span>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {['about', 'skills', 'timeline', 'achievements', 'terminal', 'ai', 'software', 'robotics', 'projects', 'vision'].map((item) => (
+            {[
+              { id: 'about', label: 'About' },
+              { id: 'skills', label: 'Skills' },
+              { id: 'timeline', label: 'Timeline' },
+              { id: 'terminal', label: 'Demo' },
+              { id: 'ai', label: 'AI' },
+              { id: 'software', label: 'Software' },
+              { id: 'robotics', label: 'Robotics' },
+              { id: 'projects', label: 'Impact' },
+              { id: 'vision', label: 'Future' }
+            ].map((item) => (
               <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className="text-zinc-300 hover:text-purple-400 transition-colors capitalize font-medium animate-float"
-                style={{ animationDelay: `${item.length * 0.1}s` }}
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-zinc-300 hover:text-purple-400 transition-colors font-medium"
               >
-                {item === 'terminal' ? 'Live Code' : item}
+                {item.label}
               </button>
             ))}
           </div>
@@ -50,7 +59,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-purple-400 animate-bounce-gentle"
+            className="md:hidden text-purple-400"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -58,14 +67,24 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 glass-card p-4 rounded-xl animate-flip-in">
-            {['about', 'skills', 'timeline', 'achievements', 'terminal', 'ai', 'software', 'robotics', 'projects', 'vision'].map((item) => (
+          <div className="md:hidden mt-4 glass-card p-4 rounded-xl">
+            {[
+              { id: 'about', label: 'About' },
+              { id: 'skills', label: 'Skills' },
+              { id: 'timeline', label: 'Timeline' },
+              { id: 'terminal', label: 'Demo' },
+              { id: 'ai', label: 'AI' },
+              { id: 'software', label: 'Software' },
+              { id: 'robotics', label: 'Robotics' },
+              { id: 'projects', label: 'Impact' },
+              { id: 'vision', label: 'Future' }
+            ].map((item) => (
               <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className="block w-full text-left py-2 text-zinc-300 hover:text-purple-400 transition-colors capitalize"
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left py-2 text-zinc-300 hover:text-purple-400 transition-colors"
               >
-                {item === 'terminal' ? 'Live Code' : item}
+                {item.label}
               </button>
             ))}
           </div>

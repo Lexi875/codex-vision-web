@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
@@ -12,7 +13,6 @@ import Footer from '../components/Footer';
 import BackgroundAnimation from '../components/BackgroundAnimation';
 import InteractiveSkills from '../components/InteractiveSkills';
 import TimelineSection from '../components/TimelineSection';
-import AchievementBadges from '../components/AchievementBadges';
 import LiveCodingTerminal from '../components/LiveCodingTerminal';
 import MouseFollowParticles from '../components/MouseFollowParticles';
 
@@ -26,7 +26,6 @@ const Index = () => {
       <AboutSection />
       <InteractiveSkills />
       <TimelineSection />
-      <AchievementBadges />
       <LiveCodingTerminal />
       <AISection />
       <SoftwareSection />

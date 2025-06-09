@@ -28,22 +28,22 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="text-center z-10 px-4 max-w-4xl mx-auto">
-        {/* Floating code icon */}
-        <div className="absolute -top-20 -left-20 text-purple-400/20 animate-float">
+        {/* Subtle background elements */}
+        <div className="absolute -top-20 -left-20 text-purple-400/10">
           <Code2 size={120} />
         </div>
-        <div className="absolute -top-10 -right-16 text-blue-400/20 animate-bounce-gentle">
+        <div className="absolute -top-10 -right-16 text-blue-400/10">
           <Code2 size={80} />
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-bold mb-8 animate-jump-in">
+        <h1 className="text-6xl md:text-8xl font-bold mb-8">
           Technology{' '}
-          <span className="bg-gradient-to-r from-purple-400 via-violet-500 to-purple-600 bg-clip-text text-transparent animate-pulse-glow">
+          <span className="bg-gradient-to-r from-purple-400 via-violet-500 to-purple-600 bg-clip-text text-transparent">
             Revolution
           </span>
         </h1>
         
-        <div className="glass-card p-8 mb-12 animate-flip-in" style={{ animationDelay: '0.3s' }}>
+        <div className="glass-card p-8 mb-12">
           <p className="text-2xl md:text-3xl text-zinc-300 min-h-[4rem]">
             {typedText}
             <span className="animate-pulse text-purple-400 text-4xl">|</span>
@@ -52,18 +52,17 @@ const HeroSection = () => {
 
         <button
           onClick={scrollToNext}
-          className="group glass-card px-10 py-5 rounded-xl font-bold text-xl hover:scale-110 transition-all duration-300 transform animate-float text-purple-400 hover:text-white border-purple-400/30 hover:border-purple-400/60"
-          style={{ animationDelay: '0.6s' }}
+          className="group glass-card px-10 py-5 rounded-xl font-bold text-xl hover:scale-105 transition-all duration-300 text-purple-400 hover:text-white border-purple-400/30 hover:border-purple-400/60"
         >
           Explore the Impact
-          <ArrowDown className="inline ml-3 w-6 h-6 group-hover:translate-y-2 transition-transform animate-bounce-gentle" />
+          <ArrowDown className="inline ml-3 w-6 h-6 group-hover:translate-y-1 transition-transform" />
         </button>
       </div>
 
-      {/* Enhanced floating scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
+      {/* Simple scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <div className="w-6 h-12 border-2 border-purple-400/60 rounded-full flex justify-center glass-card">
-          <div className="w-1 h-4 bg-gradient-to-b from-purple-400 to-violet-500 rounded-full mt-2 animate-float"></div>
+          <div className="w-1 h-4 bg-gradient-to-b from-purple-400 to-violet-500 rounded-full mt-2"></div>
         </div>
       </div>
     </section>

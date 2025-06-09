@@ -39,16 +39,16 @@ const AboutSection = () => {
       className="min-h-screen py-20 px-4 relative z-10"
     >
       <div className="max-w-6xl mx-auto">
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-5xl md:text-7xl font-bold text-center mb-20 animate-jump-in">
+        <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-5xl md:text-7xl font-bold text-center mb-20">
             Transforming <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">Society</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="glass-card p-8 rounded-2xl animate-flip-in" style={{ animationDelay: '0.2s' }}>
+              <div className="glass-card p-8 rounded-2xl">
                 <p className="text-2xl text-zinc-300 leading-relaxed mb-6">
-                  Technology is <span className="text-purple-400 font-bold animate-pulse-glow">reshaping every aspect</span> of human life.
+                  Technology is <span className="text-purple-400 font-bold">reshaping every aspect</span> of human life.
                 </p>
                 
                 <p className="text-xl text-zinc-400 leading-relaxed">
@@ -56,7 +56,7 @@ const AboutSection = () => {
                 </p>
               </div>
 
-              <div className="glass-card p-8 rounded-2xl animate-backflip border-purple-400/30" style={{ animationDelay: '0.4s' }}>
+              <div className="glass-card p-8 rounded-2xl border-purple-400/30">
                 <blockquote className="text-3xl font-bold text-center italic">
                   <span className="text-purple-400 text-5xl">"</span>
                   <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">
@@ -68,7 +68,7 @@ const AboutSection = () => {
             </div>
 
             <div className="space-y-8">
-              <h3 className="text-3xl font-bold text-center mb-12 animate-fade-in-up">
+              <h3 className="text-3xl font-bold text-center mb-12">
                 Areas of <span className="text-purple-400">Impact</span>
               </h3>
               <div className="grid grid-cols-2 gap-6">
@@ -77,12 +77,9 @@ const AboutSection = () => {
                   return (
                     <div
                       key={impact.name}
-                      className={`glass-card p-6 rounded-xl text-center font-bold border-purple-400/20 hover:border-purple-400/50 transition-all duration-300 transform hover:scale-110 animate-jump-in ${
-                        index % 2 === 0 ? 'animate-float' : 'animate-bounce-gentle'
-                      }`}
-                      style={{ animationDelay: `${index * 0.1}s` }}
+                      className="glass-card p-6 rounded-xl text-center font-bold border-purple-400/20 hover:border-purple-400/50 transition-all duration-300 hover:scale-105"
                     >
-                      <IconComponent className="w-8 h-8 mx-auto mb-3 text-purple-400 animate-float" />
+                      <IconComponent className="w-8 h-8 mx-auto mb-3 text-purple-400" />
                       <span className="text-zinc-200">{impact.name}</span>
                     </div>
                   );
