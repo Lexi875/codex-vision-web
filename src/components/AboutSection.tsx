@@ -1,18 +1,18 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Cpu, Zap, Rocket, Brain, Code, Wrench } from 'lucide-react';
+import { Globe, Users, Zap, TrendingUp, Shield, Heart } from 'lucide-react';
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  const skills = [
-    { name: 'Python', icon: Code },
-    { name: 'Flutter', icon: Zap },
-    { name: 'Firebase', icon: Rocket },
-    { name: 'React Native', icon: Brain },
-    { name: 'AI APIs', icon: Cpu },
-    { name: 'Robotics', icon: Wrench }
+  const impacts = [
+    { name: 'Healthcare', icon: Heart },
+    { name: 'Education', icon: Users },
+    { name: 'Environment', icon: Globe },
+    { name: 'Economy', icon: TrendingUp },
+    { name: 'Security', icon: Shield },
+    { name: 'Innovation', icon: Zap }
   ];
 
   useEffect(() => {
@@ -41,18 +41,18 @@ const AboutSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-5xl md:text-7xl font-bold text-center mb-20 animate-jump-in">
-            About <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">Me</span>
+            Transforming <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">Society</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="glass-card p-8 rounded-2xl animate-flip-in" style={{ animationDelay: '0.2s' }}>
                 <p className="text-2xl text-zinc-300 leading-relaxed mb-6">
-                  I'm a <span className="text-purple-400 font-bold animate-pulse-glow">15-year-old tech creator</span> passionate about building the future.
+                  Technology is <span className="text-purple-400 font-bold animate-pulse-glow">reshaping every aspect</span> of human life.
                 </p>
                 
                 <p className="text-xl text-zinc-400 leading-relaxed">
-                  I'm working on <span className="text-violet-400 font-semibold">Max AI</span>, a future OS called <span className="text-green-400 font-semibold">CODEX</span>, and projects that combine software, robotics, and intelligence.
+                  From <span className="text-violet-400 font-semibold">artificial intelligence</span> diagnosing diseases to <span className="text-green-400 font-semibold">robots</span> exploring space, we're living in an era of unprecedented change.
                 </p>
               </div>
 
@@ -60,7 +60,7 @@ const AboutSection = () => {
                 <blockquote className="text-3xl font-bold text-center italic">
                   <span className="text-purple-400 text-5xl">"</span>
                   <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">
-                    I don't wait for the future — I build it.
+                    Technology is not just changing what we do — it's changing who we are.
                   </span>
                   <span className="text-purple-400 text-5xl">"</span>
                 </blockquote>
@@ -69,21 +69,21 @@ const AboutSection = () => {
 
             <div className="space-y-8">
               <h3 className="text-3xl font-bold text-center mb-12 animate-fade-in-up">
-                Skills & <span className="text-purple-400">Technologies</span>
+                Areas of <span className="text-purple-400">Impact</span>
               </h3>
               <div className="grid grid-cols-2 gap-6">
-                {skills.map((skill, index) => {
-                  const IconComponent = skill.icon;
+                {impacts.map((impact, index) => {
+                  const IconComponent = impact.icon;
                   return (
                     <div
-                      key={skill.name}
+                      key={impact.name}
                       className={`glass-card p-6 rounded-xl text-center font-bold border-purple-400/20 hover:border-purple-400/50 transition-all duration-300 transform hover:scale-110 animate-jump-in ${
                         index % 2 === 0 ? 'animate-float' : 'animate-bounce-gentle'
                       }`}
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <IconComponent className="w-8 h-8 mx-auto mb-3 text-purple-400 animate-float" />
-                      <span className="text-zinc-200">{skill.name}</span>
+                      <span className="text-zinc-200">{impact.name}</span>
                     </div>
                   );
                 })}

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Bot, Cpu, Smartphone, Home, Glasses, Wrench } from 'lucide-react';
+import { Bot, Cpu, Smartphone, Home, Hospital, GraduationCap } from 'lucide-react';
 
 const ConnectionSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,11 +24,11 @@ const ConnectionSection = () => {
   }, []);
 
   const connections = [
-    { name: 'Software', icon: Cpu, position: 'top-20 left-20' },
-    { name: 'Robotics', icon: Wrench, position: 'top-20 right-20' },
-    { name: 'Smart Homes', icon: Home, position: 'bottom-20 left-20' },
-    { name: 'AI Glasses', icon: Glasses, position: 'bottom-20 right-20' },
-    { name: 'Mobile Apps', icon: Smartphone, position: 'top-1/2 right-10' }
+    { name: 'Smart Homes', icon: Home, position: 'top-20 left-20' },
+    { name: 'Healthcare AI', icon: Hospital, position: 'top-20 right-20' },
+    { name: 'Education Tech', icon: GraduationCap, position: 'bottom-20 left-20' },
+    { name: 'Mobile Apps', icon: Smartphone, position: 'bottom-20 right-20' },
+    { name: 'Automation', icon: Cpu, position: 'top-1/2 right-10' }
   ];
 
   return (
@@ -40,16 +40,16 @@ const ConnectionSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-5xl md:text-7xl font-bold text-center mb-20 animate-jump-in">
-            How It All <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">Connects</span>
+            Everything <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">Connected</span>
           </h2>
 
           <div className="relative h-96 glass-card rounded-3xl p-8 animate-flip-in" style={{ animationDelay: '0.3s' }}>
-            {/* Central Max AI */}
+            {/* Central Society Hub */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
               <div className="glass-card p-8 rounded-full border-purple-400/50 animate-float bg-gradient-to-r from-purple-500/20 to-violet-500/20">
                 <Bot className="w-16 h-16 text-purple-400" />
               </div>
-              <p className="text-center mt-4 font-bold text-purple-400 text-xl animate-pulse-glow">Max AI</p>
+              <p className="text-center mt-4 font-bold text-purple-400 text-xl animate-pulse-glow">Society 2030</p>
             </div>
 
             {/* Connection nodes */}
@@ -90,8 +90,8 @@ const ConnectionSection = () => {
 
           <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <p className="text-2xl text-zinc-300 max-w-3xl mx-auto leading-relaxed">
-              Everything I build works together. <span className="text-purple-400 font-bold">Max AI</span> is the brain that connects 
-              software, robotics, and smart devices into one unified experience.
+              In the near future, <span className="text-purple-400 font-bold">intelligent systems</span> will seamlessly connect 
+              every aspect of society, creating a world that's smarter, safer, and more sustainable.
             </p>
           </div>
         </div>

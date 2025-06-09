@@ -1,33 +1,33 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Bot, Brain, Cpu } from 'lucide-react';
+import { Bot, Brain, Cpu, Globe, Users, Zap } from 'lucide-react';
 
 const ProjectsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  const projects = [
+  const solutions = [
     {
-      title: "Max AI",
-      description: "Voice assistant that learns, responds, and helps with everything you need",
-      tech: "Python, Flutter, Gemini API",
-      icon: Bot,
+      title: "Smart Healthcare",
+      description: "AI diagnosing diseases faster than doctors, robot surgeons performing precise operations",
+      impact: "Saving millions of lives globally",
+      icon: Brain,
       gradient: "from-purple-500 to-violet-600",
       delay: '0.1s'
     },
     {
-      title: "Study Buddy",
-      description: "AI-powered study tool with flashcards, exam mode, and voice help",
-      tech: "AI APIs, React Native",
-      icon: Brain,
+      title: "Autonomous Future",
+      description: "Self-driving cars reducing accidents, delivery drones reaching remote areas",
+      impact: "95% reduction in traffic accidents",
+      icon: Bot,
       gradient: "from-green-500 to-emerald-600",
       delay: '0.3s'
     },
     {
-      title: "CODEX Vision",
-      description: "Smart homes, AI glasses, transforming robots, all connected in one OS",
-      tech: "Future OS, IoT, Robotics",
-      icon: Cpu,
+      title: "Connected World",
+      description: "Smart cities optimizing energy, IoT devices creating seamless experiences",
+      impact: "50% reduction in energy waste",
+      icon: Globe,
       gradient: "from-blue-500 to-cyan-600",
       delay: '0.5s'
     }
@@ -59,44 +59,44 @@ const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-5xl md:text-7xl font-bold text-center mb-20 animate-jump-in">
-            My <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">Projects</span>
+            Real-World <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">Solutions</span>
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {projects.map((project, index) => {
-              const IconComponent = project.icon;
+            {solutions.map((solution, index) => {
+              const IconComponent = solution.icon;
               return (
                 <div
-                  key={project.title}
+                  key={solution.title}
                   className={`group glass-card rounded-2xl p-8 border-purple-400/20 hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 animate-flip-in ${
                     index % 2 === 0 ? 'animate-float' : 'animate-bounce-gentle'
                   }`}
-                  style={{ animationDelay: project.delay }}
+                  style={{ animationDelay: solution.delay }}
                 >
-                  <div className={`h-3 w-full bg-gradient-to-r ${project.gradient} rounded-full mb-6 animate-pulse-glow`}></div>
+                  <div className={`h-3 w-full bg-gradient-to-r ${solution.gradient} rounded-full mb-6 animate-pulse-glow`}></div>
                   
                   <div className="flex items-center justify-center mb-6">
                     <IconComponent className="w-12 h-12 text-purple-400 animate-float" />
                   </div>
                   
                   <h3 className="text-3xl font-bold mb-4 group-hover:text-purple-400 transition-colors text-center">
-                    {project.title}
+                    {solution.title}
                   </h3>
                   
                   <p className="text-zinc-300 mb-6 leading-relaxed text-lg text-center">
-                    {project.description}
+                    {solution.description}
                   </p>
                   
-                  <div className="glass-card p-4 rounded-lg border-purple-400/20">
-                    <span className="font-bold text-purple-400">Tech:</span>
-                    <span className="text-zinc-300 ml-2">{project.tech}</span>
+                  <div className="glass-card p-4 rounded-lg border-green-400/20">
+                    <span className="font-bold text-green-400">Impact:</span>
+                    <span className="text-zinc-300 ml-2">{solution.impact}</span>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Code terminal that does a backflip */}
+          {/* Future stats */}
           <div className="mt-20 flex justify-center">
             <div className="terminal-window w-full max-w-2xl animate-backflip" style={{ animationDelay: '0.8s' }}>
               <div className="terminal-header">
@@ -108,10 +108,13 @@ const ProjectsSection = () => {
               </div>
               <div className="p-6 font-mono">
                 <div className="text-green-400 text-lg typewriter">
-                  {">"} Building the future, one line of code at a time...
+                  {">"} By 2030: 97 million new AI jobs created worldwide
+                </div>
+                <div className="text-blue-400 mt-2">
+                  {">"} By 2025: 75% of businesses using AI technology
                 </div>
                 <div className="text-purple-400 mt-2 animate-pulse">
-                  alex@codex:~$ make-magic
+                  future@society:~$ building tomorrow today
                 </div>
               </div>
             </div>

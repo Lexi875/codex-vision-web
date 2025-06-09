@@ -4,7 +4,7 @@ import { ArrowDown, Code2 } from 'lucide-react';
 
 const HeroSection = () => {
   const [typedText, setTypedText] = useState('');
-  const fullText = "I build cool things with AI, software, and robotics.";
+  const fullText = "How AI, Robotics, and Software are changing our world.";
 
   useEffect(() => {
     let index = 0;
@@ -37,11 +37,10 @@ const HeroSection = () => {
         </div>
 
         <h1 className="text-6xl md:text-8xl font-bold mb-8 animate-jump-in">
-          Hey, I'm{' '}
+          Technology{' '}
           <span className="bg-gradient-to-r from-purple-400 via-violet-500 to-purple-600 bg-clip-text text-transparent animate-pulse-glow">
-            Alex
+            Revolution
           </span>
-          .
         </h1>
         
         <div className="glass-card p-8 mb-12 animate-flip-in" style={{ animationDelay: '0.3s' }}>
@@ -56,7 +55,7 @@ const HeroSection = () => {
           className="group glass-card px-10 py-5 rounded-xl font-bold text-xl hover:scale-110 transition-all duration-300 transform animate-float text-purple-400 hover:text-white border-purple-400/30 hover:border-purple-400/60"
           style={{ animationDelay: '0.6s' }}
         >
-          Enter My World
+          Explore the Impact
           <ArrowDown className="inline ml-3 w-6 h-6 group-hover:translate-y-2 transition-transform animate-bounce-gentle" />
         </button>
       </div>
