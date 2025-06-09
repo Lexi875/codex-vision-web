@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'glass-card border-b border-purple-400/20' : 'bg-transparent'
+      isScrolled ? 'backdrop-blur-md bg-gray-900/80 border-b border-purple-400/20' : 'bg-transparent'
     }`}>
       <nav className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -38,7 +38,6 @@ const Header = () => {
             {[
               { id: 'about', label: 'About' },
               { id: 'skills', label: 'Skills' },
-              { id: 'timeline', label: 'Timeline' },
               { id: 'terminal', label: 'Demo' },
               { id: 'ai', label: 'AI' },
               { id: 'software', label: 'Software' },
@@ -49,7 +48,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-zinc-300 hover:text-purple-400 transition-colors font-medium"
+                className="text-gray-300 hover:text-purple-400 transition-colors font-medium text-sm uppercase tracking-wide"
               >
                 {item.label}
               </button>
@@ -67,11 +66,10 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 glass-card p-4 rounded-xl">
+          <div className="md:hidden mt-4 backdrop-blur-md bg-gray-900/90 p-4 rounded-xl border border-purple-400/20">
             {[
               { id: 'about', label: 'About' },
               { id: 'skills', label: 'Skills' },
-              { id: 'timeline', label: 'Timeline' },
               { id: 'terminal', label: 'Demo' },
               { id: 'ai', label: 'AI' },
               { id: 'software', label: 'Software' },
@@ -82,7 +80,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left py-2 text-zinc-300 hover:text-purple-400 transition-colors"
+                className="block w-full text-left py-2 text-gray-300 hover:text-purple-400 transition-colors"
               >
                 {item.label}
               </button>

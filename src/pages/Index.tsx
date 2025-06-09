@@ -12,20 +12,16 @@ import VisionSection from '../components/VisionSection';
 import Footer from '../components/Footer';
 import BackgroundAnimation from '../components/BackgroundAnimation';
 import InteractiveSkills from '../components/InteractiveSkills';
-import TimelineSection from '../components/TimelineSection';
 import LiveCodingTerminal from '../components/LiveCodingTerminal';
-import MouseFollowParticles from '../components/MouseFollowParticles';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 overflow-x-hidden relative">
       <BackgroundAnimation />
-      <MouseFollowParticles />
       <Header />
       <HeroSection />
       <AboutSection />
       <InteractiveSkills />
-      <TimelineSection />
       <LiveCodingTerminal />
       <AISection />
       <SoftwareSection />
